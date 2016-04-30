@@ -181,7 +181,7 @@ stl_allocate(stl_file *stl) {
   /* Allocate memory for the neighbors list */
   stl->neighbors_start = (stl_neighbors*)
                          calloc(stl->stats.number_of_facets, sizeof(stl_neighbors));
-  if(stl->facet_start == NULL) perror("stl_initialize");
+  if(stl->neighbors_start == NULL) perror("stl_initialize");
 }
 
 void
@@ -243,7 +243,7 @@ stl_reallocate(stl_file *stl) {
   stl->neighbors_start = (stl_neighbors*)
                          realloc(stl->neighbors_start, stl->stats.number_of_facets *
                                  sizeof(stl_neighbors));
-  if(stl->facet_start == NULL) perror("stl_initialize");
+  if(stl->neighbors_start == NULL) perror("stl_initialize");
 }
 
 
